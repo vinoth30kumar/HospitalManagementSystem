@@ -68,7 +68,7 @@ public class MedicalRecordServiceImplementation implements MedicalRecordService 
 		// TODO Auto-generated method stub
 		MedicalRecordEntity medicalRecordEntity = this.medicalRecordRepository.findById(medicalId)
 				.orElseThrow(() -> new ResourceNotFoundException("MedicalRecord", "MedicalId", medicalId));
-		medicalRecordEntity.setMedicalId(medicalId);
+		medicalRecordEntity.setMedicalId(medicalRecord.get);
 		medicalRecordEntity.setDateOfAdmission(medicalRecord.getDateOfAdmission());
 		medicalRecordEntity.setMedicalPatientSummary(medicalRecord.getMedicalPatientSummary());
 
